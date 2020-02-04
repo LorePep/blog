@@ -30,7 +30,7 @@ After approximately 1 year, Blue Vision Labs got acquired by Lyft and became par
 
 This is a list of some other random things and projects:
 
-* **Blogging**: As you may have notices I manage this blog, plus I also write on [Mediu](https://medium.com/@l.peppoloni), where I also write for publications such as [Towards Data Science](https://towardsdatascience.com/). I don't cross-post everything so feel free to have a look also at the articles on Medium.
+* **Blogging**: As you may have notices I manage this blog, plus I also write on [Medium](https://medium.com/@l.peppoloni), where I also write for publications such as [Towards Data Science](https://towardsdatascience.com/). I don't cross-post everything so feel free to have a look also at the articles on Medium.
 
 * **Kaggle**: as a hobby I sometimes take part to Kaggle competitions (mainly Computer Vision oriented), and I am currently "Competition Expert".
     - [Santander Customer Prediction](https://www.kaggle.com/c/santander-customer-transaction-prediction) Top 4%
