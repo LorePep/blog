@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Lorenzo Peppoloni</title>
+    <link>/tags/go/</link>
+    <description>Recent content in go on Lorenzo Peppoloni</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 02 Feb 2020 02:13:50 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Table-driven tests in Python</title>
+      <link>/tabledriventestspy/</link>
+      <pubDate>Sun, 02 Feb 2020 02:13:50 +0000</pubDate>
+      
+      <guid>/tabledriventestspy/</guid>
+      <description>Table-driven tests are an elegant and functional way to unittest your functions in GO. Let&amp;rsquo;s see some ideas on how to introduct this same testing pattern in Python.
+What are table-driven tests One thing I really love about GO is table-driven tests. If you are not familiar with them, table-driven tests are a very elegant way to write unittests for your code. The basic idea is that you write a list of named test cases, defining the input and the expected output for each test case, then you loop over the cases, run your function and check that the actual output is equal to the expected one.</description>
+    </item>
+    
+  </channel>
+</rss>

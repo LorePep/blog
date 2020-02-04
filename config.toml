@@ -1,0 +1,32 @@
+baseurl = "/"
+title = "Lorenzo Peppoloni"
+theme = "ghostwriter"
+
+[Params]
+    mainSections = ["post"]
+    intro = true
+    headline = "Lorenzo Peppoloni"
+    description = ""
+    github = "https://github.com/lorepep"
+    twitter = "https://twitter.com/lorepep"
+    linkedin = "https://twitter.com/lpeppoloni"
+    email = ""
+    opengraph = true
+    shareTwitter = true
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+
+[Permalinks]
+    post = "/:filename/"
+
+
+[[menu.main]]
+    name = "About"
+    url = "/page/about/"
+    weight = 3
+
+
+[[menu.main]]
+    name = "CV"
+    url = ""
+    weight = 4

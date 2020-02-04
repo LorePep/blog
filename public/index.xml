@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lorenzo Peppoloni</title>
+    <link>/</link>
+    <description>Recent content on Lorenzo Peppoloni</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 02 Feb 2020 02:13:50 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Table-driven tests in Python</title>
+      <link>/tabledriventestspy/</link>
+      <pubDate>Sun, 02 Feb 2020 02:13:50 +0000</pubDate>
+      
+      <guid>/tabledriventestspy/</guid>
+      <description>Table-driven tests are an elegant and functional way to unittest your functions in GO. Let&amp;rsquo;s see some ideas on how to introduct this same testing pattern in Python.
+What are table-driven tests One thing I really love about GO is table-driven tests. If you are not familiar with them, table-driven tests are a very elegant way to write unittests for your code. The basic idea is that you write a list of named test cases, defining the input and the expected output for each test case, then you loop over the cases, run your function and check that the actual output is equal to the expected one.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/page/about/</link>
+      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
+      
+      <guid>/page/about/</guid>
+      <description>About A brief history of my education and experience
+Education
+I got a BSc in Informatic Engineering and a MSc in Robotics and Automation from University of Pisa. After that I got a PhD in Perceptual Robotics from Scoula Superiore Sant&amp;rsquo;Anna. The main focus of my PhD was human motion reconstruction from cheap sensors applied to robotic teleoperation and robotic embodiement.
+In 2015 and later in 2017, I spent some time in LA at USC with Prof.</description>
+    </item>
+    
+  </channel>
+</rss>
