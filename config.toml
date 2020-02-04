@@ -23,10 +23,10 @@ theme = "ghostwriter"
 [[menu.main]]
     name = "About"
     url = "/page/about/"
-    weight = 3
+    weight = 1
 
 
 [[menu.main]]
     name = "CV"
     url = ""
-    weight = 4
+    weight = 2
