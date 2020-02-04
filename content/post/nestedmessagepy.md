@@ -1,20 +1,20 @@
 +++
-title = "Nested messages and Python generated code"
-description = "How to create nested objects using Python code generated from proto"
+title = "Proto nested messages and repeated fields in Python"
+description = "How to create repeated nested objects using Python"
 tags = [
     "proto",
     "python",
     "development",
 ]
-date = 2020-04-02T20:13:50Z
+date = 2020-02-04T20:13:50Z
 author = "Lorenzo Peppoloni"
 +++
 
-Today I was having some problems populating a proto message in Python with a nested message definition, and it took me a while to figure out how to do it.
+Today I was having some problems populating a proto repeated message in Python with a nested message definition, and it took me a while to figure out how to do it.
 
 In reality it is pretty simple. Let's make an example.
 
-```protobuf
+```
 syntax = "proto3";
 
 package test;
