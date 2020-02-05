@@ -33,7 +33,7 @@ Let's save our `test.proto` and generate the Python code.
 protoc --proto_path=. --python_out=. test.proto
 ```
 
-Now if we want to create an element of `Trajectory2d` type add points to it, we can just use the `add()` function, which creates a new message object, appends it to the list of repeated objects, and returns it for the caller to fill, plus it forwards keyword arguments to the class.
+Now if we want to create an element of `Trajectory2d` type and add points to it, we can just use the `add()` function. The function will create a new message object, append it to the list of repeated objects, and return it for the caller to fill. In addition it will forward keyword arguments to the class.
 
 ```python
 from test_pb2 import Trajectory2d
