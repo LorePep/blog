@@ -13,12 +13,12 @@ author = "Lorenzo Peppoloni"
 +++
 
 
-[Table-driven tests](https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go) are an elegant and functional way to unittest your functions in GO. Let's see some ideas on how to introduct this same testing pattern in Python.
+[Table-driven tests](https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go) are an elegant and functional way to unittest your functions in Go. Let's see some ideas on how to introduce this same testing pattern in Python.
 
 
 ## What are table-driven tests
 
-One thing I really love about GO is table-driven tests. If you are not familiar with them, table-driven tests are a very elegant way to write unittests for your code. The basic idea is that you write a list of named test cases, defining the input and the expected output for each test case, then you loop over the cases, run your function and check that the actual output is equal to the expected one.
+One thing I really love about Go is table-driven tests. If you are not familiar with them, table-driven tests are a very elegant way to write unittests for your code. The basic idea is that you write a list of named test cases, defining the input and the expected output for each test case, then you loop over the cases, run your function and check that the actual output is equal to the expected one.
 
 An example in Go looks like this, let's imagine we want to test a sorting function we wrote:
 
@@ -96,12 +96,12 @@ class TestMySort(unittest.TestCase):
 
 The main advantage of this approach is that it's simple, understandable and it is compatible with every Python version.
 
-The main problem I see is that there is not much protection around the `testcase` datastructure. You could make a mistake and the dictionaries could have different unexpected keys or different types. Typing could be enforced, but still the best you can do is defining the testcases `List[Dict[str, Any]]` which is not very strict.
+The main problem I see is that there is not much protection around the `testcase` datastructure. You could make a mistake and the dictionaries could have different unexpected keys or different types. Typing could be enforced, but still the best you can do is defining the test cases type as `List[Dict[str, Any]]`, which is not very strict.
 
 ## Data Class
 If you are using Python `3.7` you can use [data classes](https://docs.python.org/3/library/dataclasses.html). A data class is a class containing mainly data, the advantage is that it comes with already pre-defined methods, such as __init__() and __repr__() making you save time when coding. 
 
-Let's see how can we use them for table-drivent tests.
+Let's see how can we use them for table-driven tests.
 
 ```python
 import unittest
@@ -138,4 +138,4 @@ Overall using data classes gives you a cleaner solution compared to dicts, since
 
 * * *
 
-In this article we quickly had a look at what are table-driven tests in GO and why they are a nice feature. We then explored possible solutions to impolement table-driven tests in Python.
+In this article we quickly had a look at what are table-driven tests in GO and why they are a nice feature. We then explored possible solutions to implement table-driven tests in Python.
