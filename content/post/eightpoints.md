@@ -6,7 +6,7 @@ tags = [
     "openCV",
     "robotics",
 ]
-date = 2020-02-20T07:13:50Z
+date = 2020-02-19T07:13:50Z
 author = "Lorenzo Peppoloni"
 markup = "mmark"
 +++
@@ -156,7 +156,7 @@ R = [[ 0.95533649, -0.        ,  0.29552021],
 t = [-1.5,  0.,  0.]
 ```
 
-As you can see we were able to recover $$R$$ and $$T$$ up to a scaling factor.
+As you can see we were able to fully recover $$R$$ and $$T$$, but only up to a scaling factor.
 
 * * *
 *Conclusions: We had an in-depth look at the eight-points algorithm to reconstruct the affine transformation between two camera poses observing the same 3D points. We formally introduce the algorithm, discussed caveats and we had a look at a real example using synthetic data in Python.*
