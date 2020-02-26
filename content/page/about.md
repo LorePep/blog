@@ -11,7 +11,7 @@ A brief history of my education and experience
 
 **Education**
 
-I got a BSc in Informatic Engineering and a MSc in Robotics and Automation from University of Pisa. After that I got a PhD in Perceptual Robotics from Scoula Superiore Sant'Anna. The main focus of my PhD was human motion reconstruction from cheap sensors applied to robotic teleoperation and robotic embodiement.
+I got a BSc in Engineering Informatics and an MSc in Robotics and Automation from the University of Pisa. After that, I got a PhD in Perceptual Robotics from Scuola Superiore Sant'Anna. The main focus of my PhD was human motion reconstruction from cheap sensors applied to robotic teleoperation and robotic embodiment.
 
 In 2015 and later in 2017, I spent some time in LA at USC with Prof. Valero Cuevas applying my nondynamical system knowledge and to study Parkinson's Disease.  
 
@@ -19,20 +19,20 @@ During 2016 I spent a year as a PostDoc at Scuola Superiore Sant'Anna, my main f
 
 **Startups**
 
-While finishing my PhD I started to work as a Data Analyst at Neuromuscular Dynamics. The startup focuses on dexterity analysis for various medical conditions and sport performance. There I was (and still am) managing the whole analysis software stack (backend, frontend, reporting and the analysis itself).
+While finishing my PhD I started to work as a Data Analyst at Neuromuscular Dynamics. The startup focuses on dexterity analysis for various medical conditions and sports performance. There I was (and still am) managing the whole analysis software stack (backend, frontend, reporting and the analysis itself).
 
 In 2017 I joined Blue Vision Labs, a London-based startup, developing the next-gen of augmented reality. There I mainly worked with Computer Vision and benchmarking large-scale AR systems. Also, my interest in distributed systems grew bigger, to the point that I switched my role from Research Engineer to Software Engineer. 
 
-After approximately 1 year, Blue Vision Labs got acquired by Lyft and became part of L5, Lyft's self-driving division. Since then, I have been working there as a Software Engineer, and I must admit I'm loving the switch back to Robotics and more "researchy" topics.
+After approximately 1 year, Blue Vision Labs got acquired by Lyft and became part of L5, Lyft's self-driving division. Since then, I have been working there as a Software Engineer, and I must admit I'm loving the switch back to Robotics and more "research-y" topics.
 
 
 ## Random Things I do
 
 This is a list of some other random things and projects:
 
-* **Blogging**: As you may have notices I manage this blog, plus I also write on [Medium](https://medium.com/@l.peppoloni), where I also write for publications such as [Towards Data Science](https://towardsdatascience.com/). I don't cross-post everything so feel free to have a look also at the articles on Medium.
+* **Blogging**: As you may have noticed I manage this blog, plus I also write on [Medium](https://medium.com/@l.peppoloni), where I also write for publications such as [Towards Data Science](https://towardsdatascience.com/). I don't cross-post everything so feel free to have a look also at the articles on Medium.
 
-* **Kaggle**: as a hobby I sometimes take part to Kaggle competitions (mainly Computer Vision oriented), and I am currently "Competition Expert".
+* **Kaggle**: as a hobby, I sometimes take part in Kaggle competitions (mainly Computer Vision oriented), and I am currently "Competition Expert".
     - [Santander Customer Prediction](https://www.kaggle.com/c/santander-customer-transaction-prediction) Top 4%
 
     - [Aptos 2019 Blindness Detection](https://www.kaggle.com/c/aptos2019-blindness-detection) Top 10%
@@ -87,7 +87,7 @@ Peppoloni, L et al., *“Stacked Generalization for scene analysis and object re
 Peppoloni, L., Filippeschi, A., Ruffaldi, E, *"Assessment of task ergonomics with an upper limb wearable device."* Control and Automation (MED), 2014 22nd Mediterranean Conference of. IEEE, 2014. doi: 10.1109/MED.2014.6961394
 
 
-Peppoloni, L, Di Fava, A., Ruffaldi, E., Avizzano, C., A., , et al. *"A ROS-integrated architecture to learn manipulation tasks from a single demonstration."* Robot and Human Interactive Communication, 2014 RO-MAN: The 23rd IEEE International Symposium on. IEEE, 2014. doi:10.1109/ROMAN.2014.6926308
+Peppoloni, L, Di Fava, A., Ruffaldi, E., Avizzano, C., A., et al. *"A ROS-integrated architecture to learn manipulation tasks from a single demonstration."* Robot and Human Interactive Communication, 2014 RO-MAN: The 23rd IEEE International Symposium on. IEEE, 2014. doi:10.1109/ROMAN.2014.6926308
 
 
 Peppoloni, L., Filippeschi, A., Ruffaldi, E., *"A novel 7 degrees of freedom model for upper limb kinematic reconstruction based on wearable sensors."* Intelligent Systems and Informatics (SISY), 2013 IEEE 11th International Symposium on. IEEE, 2013. doi: 10.1109/SISY.2013.6662551
