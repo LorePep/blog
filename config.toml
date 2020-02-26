@@ -1,7 +1,6 @@
 baseurl = "/"
 title = "Lorenzo Peppoloni"
 theme = "ghostwriter"
-disqusShortname = "lorenzopeppoloni-com"
 
 [Taxonomies]
     tag = "tags"

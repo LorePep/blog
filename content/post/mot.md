@@ -13,7 +13,7 @@ author = "Lorenzo Peppoloni"
 markup = "mmark"
 +++
 
-I find Multiple object tracking (MOT) a very interesting problem. In the case called *tracking-by-detection*, you have a bunch of detections of objects (they can either be in 2D or in 3D) and you have to associate detections in time figuring out if they are observation of the same object.
+I find Multiple object tracking (MOT) a very interesting problem. In the case called *tracking-by-detection*, you have a bunch of detections of objects (they can either be in 2D or 3D) and you have to associate detections in time figuring out if they are observation of the same object.
 
 More formally, we can define the problem as a multi-variable estimation problem.
 
@@ -26,12 +26,12 @@ Now the problem that we want to solve is to find the "optimal" sequence of state
 
 $$\hat{S}_{1:t} = \text{argmax}_{{S_{1:t}}} P(S_{1:t}| O_{1:t})$$
 
-Usually this can be solved either with a probabilistic approach or with an optimization approach. The former usually works online (more on this later) the latter is usually more suited for offline tracking, since you want to optimize and find the global optimum on the whole frame sequence. This approach is also known as non causal, since you are using the future and the past observations at the same time.
+Usually, this can be solved either with a probabilistic approach or with an optimization approach. The former usually works online (more on this later) the latter is usually more suited for offline tracking since you want to optimize and find the global optimum on the whole frame sequence. This approach is also known as non-causal since you are using the future and past observations at the same time.
 
 ## Probabilistic approach
-Usually to solve the problem with a probabilistic approach you can adopt a two-step iterative process:
+Usually, to solve the problem with a probabilistic approach you can adopt a two-step iterative process:
 
-1) you predict the state at the nexst step without using the observations (**predict**)
+1) you predict the state at the next step without using the observations (**predict**)
 2) you correct your prediction with the observations (**update**).
 
 To perform the predict step you need some dynamic model that you can use to compute predictions. To perform the update step you need some measurement/observation model that ties the observations back to the state so that you can perform the correction.
@@ -79,21 +79,21 @@ Note that models and in general knowledge about the expected behaviour of the ob
 
 Let's talk a bit about the models which I find to be a very interesting aspect of MOT.
 
-Basically you have two problems to solve
-1) how to measure similarity between objects across frames
+You have two problems to solve
+1) how to measure the similarity between objects across frames
 2) how to use that similarity information to recover identity across frames.
 
 Roughly speaking, the first problem involves
-usually modeling the appearance, or the motion of an object. While the second is the inference problem.
+usually modelling the appearance or the motion of an object. While the second is the inference problem.
 Appearance here is used as a generic term, that could be the visual appearance if you are using a camera.
 
-Two widely used approaches for modeling in MOT are **appearance models** and **motion models**. The former uses the way in which an object appears to the sensor, the latter uses the expected motion of the object.
+Two widely used approaches for modelling in MOT are **appearance models** and **motion models**. The former uses how an object appears to the sensor, the latter uses the expected motion of the object.
 
-Let's have a look at examples, one of the simplest motion model consists of assuming that from one frame to the other an object didn't move much. If I have an observation in the frame $$j$$ and I have a "close" observation in frame $$j+1$$ I will associate them to the same object. What does close mean? I can for esample measure the distance between the centroids, or I can use intersection over union, that is if the two boxes intersect more than a certain threshold they are matched in time.
+Let's have a look at examples, one of the simplest motion model consists of assuming that from one frame to the other an object didn't move much. If I have an observation in the frame $$j$$ and I have a "close" observation in frame $$j+1$$ I will associate them to the same object. What does close mean? I can for example measure the distance between the centroids, or I can use intersection over union, that is if the two boxes intersect more than a certain threshold they are matched in time.
 
-This is a pretty simple approach that works. The main problems come from occlusions and the assumption (which might not hold) that the rate at which frames are captured it's "high" enough to capture very small motions in the observations. In the case of occlusions you will likely experience id switches. This is given by the fact that boxes of different objects will overlap for some frames.
+This is a pretty simple approach that works. The main problems come from occlusions and the assumption (which might not hold) that the rate at which frames are captured it's "high" enough to capture very small motions in the observations. In the case of occlusions, you will likely experience id switches. This is given by the fact that boxes of different objects will overlap for some frames.
 
-Let's see how a centroid tracker behaves for example. This results are obtained using the [Oxford Towncentre Database](http://www.robots.ox.ac.uk/~lav/Research/Projects/2009bbenfold_headpose/project.html) for pedestrian tracking.
+Let's see how a centroid tracker behaves for example. These results are obtained using the [Oxford Towncentre Database](http://www.robots.ox.ac.uk/~lav/Research/Projects/2009bbenfold_headpose/project.html) for pedestrian tracking.
 
 Detections are already available to be used for tracking.
 
@@ -103,15 +103,15 @@ As you can see the tracker works, but there are cases where id switch does happe
 
 Now, if we want to make the tracker more robust we could either use an appearance model and use information about how the detected object looks or use a motion model and make assumptions about the motion of the detected objects (e.g., in the case of a pedestrian we can assume that the object will move with constant velocity).
 
-**Appereance models**
+**Appearance models**
 
 Appearance models include two components: 
 1) a representation of the object appearance
 2) a measurement of the distance between such two representations 
 
-In the case of visual tracking lots of different representations can be used, such as local features (or deep features) of the image, color histogram, [HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients), etc...
+In the case of visual tracking, lots of different representations can be used, such as local features (or deep features) of the image, colour histogram, [HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients), etc...
 
-In general gradient-based features, like HOG can describe the shape of an object and are robust to lightning changes, but they cannot handle occlusion and deformation well. [Region covariance matrix features](http://www.bmva.org/bmvc/2014/papers/paper038/index.html) are more robust as they take more information in account, but they are more computationally expensive.
+In general gradient-based features, like HOG can describe the shape of an object and are robust to lightning changes, but they cannot handle occlusion and deformation well. [Region covariance matrix features](http://www.bmva.org/bmvc/2014/papers/paper038/index.html) are more robust as they take more information into account, but they are more computationally expensive.
 
 The distance between two representations can be computed in several ways, mainly depending on the appearance model used. 
 
@@ -125,7 +125,7 @@ As you can see the tracker is more robust to occlusion. This is given by the fac
 **Motion Models**
 
 As a final topic let's have a look at motion models.
-Motion models assume knowledge about how object moves and predict the expected position of the object. The predicted position is later corrected and updated with the measurement, which are now matched to the predictions.
+Motion models assume knowledge about how an object moves and predict the expected position of the object. The predicted position is later corrected and updated with the measurement, which is now matched to the predictions.
 
 A very common way to use motion models in the probabilistic iterative approach is to use [Kalman Filters](https://medium.com/@l.peppoloni/kalman-filters-for-software-engineers-3d2a05dee465). A very common assumption is that the objects move with constant velocity or constant acceleration.
 
@@ -134,9 +134,9 @@ improves our tracker.
 
 ![Motion](/mot/motion.gif)
 
-Here we are using a Kalman Filter with a constant velocity model. The tracker is still robust to occlusion, since we are predicting the future position of each object using the motion model.
+Here we are using a Kalman Filter with a constant velocity model. The tracker is still robust to occlusion since we are predicting the future position of each object using the motion model.
 
-The models solve the problem of how to measure similarity, the second problem of using the similarity to recover identity can be solved in several different ways. In the presented demo cases, it was solved by optimization of the intersection over union between the tracker tracks after update and the observations.
+The models solve the problem of how to measure similarity, the second problem of using the similarity to recover identity can be solved in several different ways. In the presented demo cases, it was solved by optimization of the intersection over union between the tracker tracks after the update and the observations.
 
 The examples were created using modified versions of tracking code from [this repository](https://github.com/ZidanMusk/experimenting-with-sort).
 

@@ -25,19 +25,19 @@ Let's exemplify with a drawing.
 
 ![Example](/lktracker/lk_pix.png)
 
-Let's assume at time `t` you are observing a pixel of an image (left image), and you know that the brightness is increasing towards left and down (the arrows show the gradient of the brightness). At the next time instant, after the camera moved (right image), you notive that the brightness observed through the pixel increased, given that the brightness does not change for any other reason, you can safely assume that the underlying object observed by the camera, has moved up and right (black arrows), or conversely, the camera moved with a certain velocity `v` down and left.
+Let's assume at time `t` you are observing a pixel of an image (left image), and you know that the brightness is increasing towards left and down (the arrows show the gradient of the brightness). At the next time instant, after the camera moved (right image), you notice that the brightness observed through the pixel increased, given that the brightness does not change for any other reason, you can safely assume that the underlying object observed by the camera, has moved up and right (black arrows), or conversely, the camera moved with a certain velocity `v` down and left.
 
 
 
 You can immediately notice one possible problem: what if the brightness doesn't change for the point we are observing? Or what if the brightness doesn't change in a certain direction?
-This is called the **aperture problem**. You can only perceive motion in the directions that are not orthogonal to the direction of the gradient. For example, if you observe a pixel in a monochrome patch you won't be able to perceive any motion, or if you are observing a pixel on a straight edge, you cannot perceive any movement along the edge. Luckily, in natural images it's really hard to find this scenarios, usually zooming to different levels will usually give you some texture with a brightness gradient in both `x` and `y` directions.
-An alternative solution is to observe a window around a pixel, increasing the likelihood of a "full" brightness gradient. It is to be noted that if you use a window you are implicitly assuming that all the pixels in the window move in the same way, for this assumption to be safely made you need to have very small displacements and a properly sized window, otherwise for complex motions you will easily break it.
+This is called the **aperture problem**. You can only perceive motion in the directions that are not orthogonal to the direction of the gradient. For example, if you observe a pixel in a monochrome patch you won't be able to perceive any motion, or if you are observing a pixel on a straight edge, you cannot perceive any movement along the edge. Luckily, in natural images it's really hard to find this scenario, usually zooming to different levels will usually give you some texture with a brightness gradient in both `x` and `y` directions.
+An alternative solution is to observe a window around a pixel, increasing the likelihood of a "full" brightness gradient. It is to be noted that if you use a window you are implicitly assuming that all the pixels in the window move in the same way, for this assumption to be safely made you need to have very small displacements and a properly sized window, otherwise, for complex motions you will easily break it.
 
 Let's now have a look at the math. If you assume that the brightness (**I**) remains constant for each pixel (**x**) in time, you can write:
 
 $$I(x(t), t) = \text{const} \Rightarrow \frac{dI}{dt} = 0$$
 
-Applying the chainrule to compute the derivatives we get
+Applying the chain rule to compute the derivatives we get
 
 $$\nabla I^{T}\frac{dx}{dt}+\frac{\partial I}{\partial t} = 0$$
 
@@ -45,9 +45,9 @@ If you observe the equation, you can see that it exactly describes the intuition
 
 $$\nabla I^{T}v = -\frac{\partial I}{\partial t}$$
 
-where we called **v** the velocity of the camera motion. The equation basically says that the delta in brightness given by the velocity of the camera motion accounts for to the total change of brightness in time. The velocity vector **v** is the unknown. 
+where we called **v** the velocity of the camera motion. The equation basically says that the delta in brightness given by the velocity of the camera motion accounts for the total change of brightness in time. The velocity vector **v** is the unknown. 
 
-The aperture problem is clearly visible now. On the left you have the scalar product of the gradient of the brightness and the velocity of motion. Any velocity orthogonal to the gradient will result in a null change in brightness, thus every velocity will satisfy the equation. 
+The aperture problem is clearly visible now. On the left, you have the scalar product of the gradient of the brightness and the velocity of motion. Any velocity orthogonal to the gradient will result in a null change in brightness, thus every velocity will satisfy the equation. 
 
 In the LK paper the authors proposed to solve the equation in the least square terms, that is finding the **v** that minimizes the equation. If we consider the case of a window (**W**) around the pixel **x**:
 
@@ -92,11 +92,11 @@ previous_frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 previous_points = cv2.goodFeaturesToTrack(previous_frame_gray, **DEFAULT_FEATURES_PARAMS)
 ```
 First we open the video stream, read the first frame and find pixels to track.
-OpenCV provides the function [goodFeaturesToTrack](https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html). Under the hood the function finds the most prominent corners of the image using the [Shi-Tomasi corner detector](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_shi_tomasi/py_shi_tomasi.html). 
+OpenCV provides the function [goodFeaturesToTrack](https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html). Under the hood, the function finds the most prominent corners of the image using the [Shi-Tomasi corner detector](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_shi_tomasi/py_shi_tomasi.html). 
 
 If you had to do it in practice, a simple way to identify good points is to compute the matrix **M** for all the pixels in the image and choose a set of points for which $$det(M)$$ is greater than a certain threshold. 
 
-An alternative, is to use the Harris corner detector. The idea is to weight the matrix **M** with a Gaussian centered on the window **W** center
+An alternative is to use the Harris corner detector. The idea is to weight the matrix **M** with a Gaussian centred on the window **W** centre
 
 $$M =  G_{\sigma}\nabla I \nabla I ^{T}$$
 
@@ -106,7 +106,7 @@ $$C(x) = det(M) + k*tr^{2}(M) > \vartheta $$
 
 Intuitively, the eigenvectors of **M** tell the direction of maximum and minimum variation of the brightness, while the eigenvalues tell the amount of variation. In particular, if the eigenvalues are both low we are in a flat region (there is not much change in gradient), if one of the eigenvalues is bigger then the other we are on an edge, and if both the eigenvalues are high, we are probably on a corner (brightness changes in both the directions).
 
-The Gaussian improves the results, weighting **M** based on the distance from the center.
+The Gaussian improves the results, weighting **M** based on the distance from the centre.
 
 Now, if you remember from linear algebra
 
@@ -114,7 +114,7 @@ $$C(x) = det(M) + k*tr^{2}(M) = \lambda_1 \lambda_2 + k(\lambda_1+\lambda_2)^{2}
 
 so the criteria that we are using to choose the points will yield a higher value if both the eigenvalues are high.
 
-In OpenCV you can specify to use the Harris detector (you can check in the code how).
+In OpenCV, you can specify to use the Harris detector (you can check in the code how).
 
 Once we found the first interesting points, we can just iteratively extract a new frame and use the LK tracker to compute the optical flow.
 ```python
@@ -130,7 +130,7 @@ That's what the results look like:
 
 ![Results](/lktracker/lkt.gif)
 
-If you check the full code you will notice that the LK tracker has some termination criteria argument. This is interesting, because we didn't talk about LK being an iterative algorithm (you iterate on the frames but you do not iterate on each frame). The parameter is used because OpenCV uses a more robust version of LK, which uses "pyramids". One of the main assumption of the LK algorithm is that we are dealing with very small motions (~1 pixel) and this is never the case, especially with high-res cameras. A solution is to use a coarse to fine approach (a sort of resolution pyramid). We start making the image more coarse (bigger pixels will result in smaller motions) and compute the tracking, after we estimated the flow at a coarser scale, we then make the image finer and go on iteratively at higher and higher levels of resolution.
+If you check the full code you will notice that the LK tracker has some termination criteria argument. This is interesting because we didn't talk about LK being an iterative algorithm (you iterate on the frames but you do not iterate on each frame). The parameter is used because OpenCV uses a more robust version of LK, which uses "pyramids". One of the main assumptions of the LK algorithm is that we are dealing with very small motions (~1 pixel) and this is never the case, especially with high-res cameras. A solution is to use a coarse to fine approach (a sort of resolution pyramid). We start making the image more coarse (bigger pixels will result in smaller motions) and compute the tracking after we estimated the flow at a coarser scale, we then make the image finer and go on iteratively at higher and higher levels of resolution.
 
 * * *
 *Conclusions: We had an in-depth look at the Lucas-Kanade tracker to estimate the optical flow from a sequence of images. We introduced the Harris corner detector and we had a look at a real-life example using OpenCV.*
