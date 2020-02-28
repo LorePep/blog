@@ -19,7 +19,7 @@ During 2016 I spent a year as a PostDoc at Scuola Superiore Sant'Anna, my main f
 
 **Startups**
 
-While finishing my PhD I started to work as a Data Analyst at Neuromuscular Dynamics. The startup focuses on dexterity analysis for various medical conditions and sports performance. There I was (and still am) managing the whole analysis software stack (backend, frontend, reporting and the analysis itself).
+While finishing my PhD I started to work as a Data Analyst at Neuromuscular Dynamics. The startup focuses on dexterity analysis for various medical conditions and sports performance. There I was managing the whole analysis software stack (backend, frontend, reporting and the analysis itself).
 
 In 2017 I joined Blue Vision Labs, a London-based startup, developing the next-gen of augmented reality. There I mainly worked with Computer Vision and benchmarking large-scale AR systems. Also, my interest in distributed systems grew bigger, to the point that I switched my role from Research Engineer to Software Engineer. 
 
