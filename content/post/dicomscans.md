@@ -107,5 +107,5 @@ A solution to this problem is to find (or craft) a nonlinear normalization funct
 An example can be found in the [write-up](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/discussion/118780) of the 8th place solution to the competition.
 
 ***
-*Conclusions: We had at some possible approaches that work when dealing with classification in CT scans. We started explaining how scans work, how can we convert them to Hunsfeld Units and which strategies we can use to feed the data to a neural network.*
+*Conclusions: We had a look at some possible approaches that work when dealing with classification in CT scans. We started explaining how scans work, how we can convert them to Hounsfield Units and which strategies we can use to feed the data to a neural network.*
 
