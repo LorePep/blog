@@ -4,7 +4,7 @@
 title = "Everything you need to know about multi-object tracking"
 description = "An in-depth look at Multi-object tracking"
 tags = [
-    "compute-vision",
+    "computer-vision",
     "openCV",
     "robotics",
 ]

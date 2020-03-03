@@ -2,7 +2,7 @@
 title = "Everything you need to know about the Lucas-Kanade tracker"
 description = "An in-depth analysis of the Lucas-Kanade tracker to estimate optical flow"
 tags = [
-    "compute-vision",
+    "computer-vision",
     "openCV",
     "robotics",
 ]

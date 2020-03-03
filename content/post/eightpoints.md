@@ -2,7 +2,7 @@
 title = "The eight-points algorithm"
 description = "How to compute the transformation between two camera poses"
 tags = [
-    "compute-vision",
+    "computer-vision",
     "openCV",
     "robotics",
 ]

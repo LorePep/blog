@@ -2,7 +2,7 @@
 title = "Re-identification with Triplet Loss"
 description = "How to solve re-identification tasks using Deep Learning"
 tags = [
-    "compute-vision",
+    "computer-vision",
     "machine-learning",
     "deep-learning",
 ]
