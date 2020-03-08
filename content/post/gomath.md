@@ -15,7 +15,9 @@ We don't usually associate GO with a language to do mathematics, geometry or dee
 
 But is GO good at math as well?
 
-Let's try and explore the implementation of few simple mathematical problems using GO.
+**Disclaimer**
+
+This post is an effort to share my experience and knowledge about the topic. Are there languages that are a better fit for math? Yes. Is it possible to do math (at least some simple things) with GO? Yes.
 
 ## Pre-requisite
 
@@ -121,7 +123,7 @@ Now it's time to try something a bit more complex... Let's implement a simple ne
 
 ![nn](/gomath/nn.png)
 
-In a neural network you have an input, an output layer and some hidden layers. Each layer, in its simplest form, consists of a linear transformation ($$y_i = W_ix_i + b_i$$, for the i-th layer) plus a nonlinear transformation called **activation function** ($$y_i = a_i(W_ix_i + b_i)$$). The network is trained using a cost function ($$L$$), which is a function we are trying to optimize. 
+In a multilayer perceptron, you have an input, an output layer and some hidden layers. Each layer, in its simplest form, consists of a linear transformation ($$y_i = W_ix_i + b_i$$, for the i-th layer) plus a nonlinear transformation called **activation function** ($$y_i = a_i(W_ix_i + b_i)$$). The network is trained using a cost function ($$L$$), which is a function we are trying to optimize. 
 
 For example, we have samples as inputs and outputs and we want our network to learn a function that ties the two. The cost function could be the mean squared error (MSE) between the network output given the input or the sum of the squared error (SSE) (this is really ELI5). The weights at each layer ($$W_i$$) and the biases ($$b_i$$) are our tunable parameters.
 
