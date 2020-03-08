@@ -51,7 +51,7 @@ After some research we encounter the [sort](https://golang.org/pkg/sort/) packag
 After a little bit of digging in the documentation, we think we got the mechanism. 
 We write our search function
 
-```
+```go
 // MyStructWithTime a structure with time.
 type MyStructWithTime struct {
 	foo       int
@@ -74,7 +74,7 @@ func findInStruct(in []MyStructWithTime, query time.Time) int {
 We then write a test in which we use the library in the same way we would in our production code.
 First, it is not clear for us if the slice must be already sorted before using `sort.Search`, so we write a test and see what happens.
 
-```
+```go
 earlier := time.Date(2020, time.January, 1, 2, 1, 0, 0, time.UTC)
 later := time.Date(2020, time.January, 1, 5, 1, 0, 0, time.UTC)
 
@@ -108,7 +108,7 @@ Error: Tests failed.
 ```
 Probably we are doing something, wrong, probably the slice need to be already sorted, so we change the struct to
 
-```
+```go
 {
     name: "sorted",
     input: []MyStructWithTime{
@@ -136,7 +136,7 @@ again...
 There must be something that we are missing here…We dig a bit more into the documentation, especially in the time package documentation, and we discover that After is not inclusive. From the sort documentation we got that we need to test for `>=` in a case of ascending sorted slice...Perfect!
 
 Let's fix the function
-```
+```go
 func findInStruct(in []MyStructWithTime, query time.Time) int {
 	i := sort.Search(len(in), func(i int) bool {
 		return in[i].timestamp.After(query) || in[i].timestamp.Equal(query)

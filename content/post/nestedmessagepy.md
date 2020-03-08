@@ -14,7 +14,7 @@ Today I was having some problems populating a proto repeated message in Python w
 
 In reality it is pretty simple. Let's make an example.
 
-```
+```proto
 syntax = "proto3";
 
 package test;

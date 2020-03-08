@@ -22,7 +22,7 @@ One thing I really love about Go is table-driven tests. If you are not familiar 
 
 An example in Go looks like this, let's imagine we want to test a sorting function we wrote:
 
-```
+```go
 func TestMySort(t *testing.T) {
 	testcases := []struct {
 		name     string

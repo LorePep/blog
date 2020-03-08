@@ -24,7 +24,7 @@ Let's write a bad API.
 
 Imagine we are writing a proto message for an API we are implementing, we want to model a shop transaction:
 
-```
+```proto
 message Transaction {
     int64 timestamp = 1;
     string product_code = 2;
@@ -46,7 +46,7 @@ Let's try and improve our interface, we can achieve this in multiple ways.
 ### Good documentation
 That's a solution you see quite often and it's a good solution. If your API is well documented, people will know how to use it (presumably).
 
-```
+```proto
 // Transaction models a shop transaction. Each transaction involves only one product.
 // Each product can be purchased in a shop.
 message Transaction {
@@ -76,7 +76,7 @@ As an additional point, comments will not be available in the classes generated 
 
 If the names of the fields speak for themselves and make themselves unmistakable, well...then it's really hard to get it wrong.
 
-```
+```proto
 // ShopTransaction defines a transaction happened in a shop.
 message ShopTransaction {
     int64 epoch_timestamp_ns = 1;

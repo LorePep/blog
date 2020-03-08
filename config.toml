@@ -19,6 +19,9 @@ theme = "ghostwriter"
     shareTwitter = true
     shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
+    PygmentsCodeFences = true
+    PygmentsStyle = "monokai"
+
 
 [Permalinks]
     post = "/:filename/"
