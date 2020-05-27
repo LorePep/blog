@@ -35,5 +35,5 @@ theme = "ghostwriter"
 
 [[menu.main]]
     name = "CV"
-    url = ""
+    url = "https://drive.google.com/file/d/1gaH-OF9_z51v1WCOBfwAHabUmiEg02BU/view?usp=sharing"
     weight = 2
