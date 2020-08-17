@@ -1,0 +1,39 @@
+baseurl = "/"
+title = "Lorenzo Peppoloni"
+theme = "ghostwriter"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    mainSections = ["post"]
+    intro = true
+    headline = "Lorenzo Peppoloni"
+    description = ""
+    github = "https://github.com/lorepep"
+    twitter = "https://twitter.com/lorepep"
+    linkedin = "https://linkedin.com/lpeppoloni"
+    email = ""
+    googleAnalytics = "UA-159316457-1"
+    opengraph = true
+    shareTwitter = true
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+    PygmentsCodeFences = true
+    PygmentsStyle = "monokai"
+
+
+[Permalinks]
+    post = "/:filename/"
+
+
+[[menu.main]]
+    name = "About"
+    url = "/page/about/"
+    weight = 1
+
+
+[[menu.main]]
+    name = "CV"
+    url = "https://drive.google.com/file/d/1gaH-OF9_z51v1WCOBfwAHabUmiEg02BU/view?usp=sharing"
+    weight = 2

@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Lorenzo Peppoloni"
+title = "Hugo Hermit"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
@@ -10,10 +10,11 @@ pygmentsUseClasses  = true
 rssLimit = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
-googleAnalytics = "UA-159316457-1"
+# googleAnalytics = "UA-123-45"
+# disqusShortname = "yourdiscussshortname"
 
 [author]
-  name = "Lorenzo Peppoloni"
+  name = "John Doe"
 
 [blackfriday]
   # hrefTargetBlank = true
@@ -35,7 +36,7 @@ googleAnalytics = "UA-159316457-1"
   # images = [""]
   themeColor = "#494f5c"
 
-  homeSubtitle = "I'm Lorenzo, sofware engineer, roboticist and musician."
+  homeSubtitle = "A minimal and fast theme for Hugo."
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
@@ -54,18 +55,17 @@ googleAnalytics = "UA-159316457-1"
 
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
-
   [[params.social]]
     name = "twitter"
-    url = "https://twitter.com/lorepep"
+    url = "https://twitter.com/"
+
+  [[params.social]]
+    name = "instagram"
+    url = "https://instagram.com/"
 
   [[params.social]]
     name = "github"
-    url = "https://github.com/lorepep"
-
-  [[params.social]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/lorenzo-peppoloni/"
+    url = "https://github.com/"
 
 [menu]
 
@@ -76,5 +76,5 @@ googleAnalytics = "UA-159316457-1"
 
   [[menu.main]]
     name = "About"
-    url = "page/about"
+    url = "about-hugo/"
     weight = 20
